@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using PavonisInteractive.TerraInvicta;
+using PavonisInteractive.TerraInvicta.Audio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -80,7 +81,11 @@ namespace AutomateFleet.UI
             UiKit.Layout(ok, preferredWidth: 160, preferredHeight: 38);
             var button = ok.GetComponent<Button>();
             button.interactable = true;
-            button.onClick.AddListener(() => root.SetActive(false));
+            button.onClick.AddListener(() =>
+            {
+                AudioManager.PlayOneShot("event:/SFX/UI_SFX/trig_SFX_Acknowledge");
+                root.SetActive(false);
+            });
 
             root.SetActive(false);
             return true;

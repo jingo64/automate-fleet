@@ -2,6 +2,8 @@
 
 A Terra Invicta mod that gives a fleet standing orders to keep a planet or moon clear of enemies, so you don't have to babysit every AI fleet and outpost that turns up.
 
+![The Automate Fleet orders window](screenshot-orders.png)
+
 ## Features
 
 - An **Automate Fleet** operation on your fleets, alongside the game's own operations

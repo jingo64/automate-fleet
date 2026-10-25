@@ -1,0 +1,46 @@
+[b]Requires Unity Mod Manager.[/b] Without it this mod won't load. Install steps are below.
+
+[h1]Automate Fleet[/h1]
+Give a fleet standing orders to keep a planet or moon clear of enemies, so you don't have to babysit every AI fleet and outpost that turns up.
+
+[h2]Features[/h2]
+[list]
+[*]An [b]Automate Fleet[/b] operation on your fleets, next to the game's own operations
+[*]Choose a body to guard from the fleet's local system (e.g. Earth or Luna, Mars or its moons). Every orbit around it is watched
+[*]Pick which factions to attack. War status is shown next to each one, and factions you're at war with are ticked by default
+[*]Set a maximum enemy strength. The fleet only engages fleets at or below it
+[*]Enemy fleets around the body are intercepted, weakest first, and enemy stations are docked with and destroyed
+[*]If a fleet above the limit heads for the body or your fleet, the game pauses, automation stops and a popup tells you who's coming and when
+[*]Damaged or under 25% delta-v? The fleet goes home, waits until it's fixed, then carries on
+[*]Combat uses the normal combat prompt, so you still choose how each fight goes
+[*][b]Stop Automation[/b] cancels the orders at any time
+[/list]
+
+[h2]Installation[/h2]
+[olist]
+[*]Download [url=https://www.nexusmods.com/site/mods/21]Unity Mod Manager[/url] and run UnityModManager.exe. Pick Terra Invicta, choose the [b]DoorstopProxy[/b] method and click Install.
+[*][b]Linux / Steam Deck only:[/b] set this as Terra Invicta's launch option in Steam:
+[code]WINEDLLOVERRIDES="winhttp=n,b" %command%[/code]
+[*]Subscribe to this mod and start the game. "Automate Fleet" should appear in the UMM window (Ctrl+F10).
+[/olist]
+
+[h2]How to use[/h2]
+[olist]
+[*]Select one of your fleets and open its operations.
+[*]Choose [b]Automate Fleet[/b].
+[*]Pick the body to guard, tick the factions to attack and set the maximum enemy strength. Alien strengths are often overstated, so the slider goes up to 5x your own and you can type any value.
+[*]Press [b]Start automation[/b] and unpause.
+[/olist]
+
+[h2]Good to know[/h2]
+[list]
+[*]Set a homeport for the fleet. Without one it can't resupply, and automation stops when it needs repairs or propellant.
+[*]Space combat only happens between factions that are hostile to each other, so targeting a faction you're at peace with may not lead to a fight.
+[*]The fleet checks its orders once a day.
+[*]Orders last for the current session only. They're not saved with your game, so the mod is safe to add or remove at any time.
+[/list]
+
+Tested on version 1.0.53b.
+
+[h2]Bugs and source[/h2]
+Source code and bug reports are on [url=https://github.com/jingo64/automate-fleet]GitHub[/url]. If something breaks, please attach UMM's log ([i]TerraInvicta_Data/Managed/UnityModManager/Log.txt[/i]). The mod logs each decision it makes there.

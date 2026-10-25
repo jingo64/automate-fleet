@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using AutomateFleet.Automation;
 using PavonisInteractive.TerraInvicta;
+using PavonisInteractive.TerraInvicta.Audio;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -178,7 +179,11 @@ namespace AutomateFleet.UI
             var cancel = UiKit.CloneWidget(buttonTemplate, footer.transform, "Cancel");
             UiKit.SetLabel(cancel, "Cancel");
             UiKit.Layout(cancel, preferredWidth: 200, preferredHeight: 38);
-            cancel.GetComponent<Button>().onClick.AddListener(Close);
+            cancel.GetComponent<Button>().onClick.AddListener(() =>
+            {
+                AudioManager.PlayOneShot("event:/SFX/UI_SFX/trig_SFX_Cancel");
+                Close();
+            });
             var start = UiKit.CloneWidget(buttonTemplate, footer.transform, "Start");
             UiKit.SetLabel(start, "Start automation");
             UiKit.Layout(start, preferredWidth: 200, preferredHeight: 38);
@@ -273,11 +278,13 @@ namespace AutomateFleet.UI
             if (targets.Count == 0)
             {
                 messageText.text = "Tick at least one faction to attack.";
+                AudioManager.PlayOneShot("event:/SFX/UI_SFX/trig_SFX_BadUI");
                 return;
             }
             if (bodies.Count == 0)
             {
                 messageText.text = "No body selected.";
+                AudioManager.PlayOneShot("event:/SFX/UI_SFX/trig_SFX_BadUI");
                 return;
             }
             FleetOrders.Set(new Orders
@@ -287,6 +294,8 @@ namespace AutomateFleet.UI
                 targets = new HashSet<TIFactionState>(targets),
                 maxEnemyStrength = TryReadStrength(out var typed) ? typed : strengthSlider.value,
             });
+            // The same sound the game's own confirm buttons make
+            AudioManager.PlayOneShot("event:/SFX/UI_SFX/trig_SFX_GenericConfirm");
             Close();
         }
     }
