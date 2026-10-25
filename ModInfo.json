@@ -1,0 +1,14 @@
+{
+	"Id": "AutomateFleet",
+	"DisplayName": "Automate Fleet",
+	"Title": "Automate Fleet",
+	"Author": "dmeadows",
+	"Version": "0.1.0",
+	"Requirements": [],
+	"ManagerVersion": "0.24.0.0",
+	"AssemblyName": "AutomateFleet.dll",
+	"EntryMethod": "AutomateFleet.Main.Load",
+	"ModURL": "",
+	"HomePage": "",
+	"Description": "Give a fleet standing orders to keep a body's orbits clear of enemy fleets and stations."
+}
